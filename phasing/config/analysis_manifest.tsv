@@ -1,0 +1,11 @@
+analysis_name	analysis_config
+bonobo	config/analyses/bonobo.yaml
+central_chimpanzee	config/analyses/central_chimpanzee.yaml
+eastern_chimpanzee	config/analyses/eastern_chimpanzee.yaml
+western_chimpanzee	config/analyses/western_chimpanzee.yaml
+nigerian_chimpanzee	config/analyses/nigerian_chimpanzee.yaml
+western_lowland_gorilla	config/analyses/western_lowland_gorilla.yaml
+eastern_lowland_gorilla	config/analyses/eastern_lowland_gorilla.yaml
+mountain_gorilla	config/analyses/mountain_gorilla.yaml
+bornean_orangutan	config/analyses/bornean_orangutan.yaml
+sumatran_orangutan	config/analyses/sumatran_orangutan.yaml
