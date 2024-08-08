@@ -21,7 +21,7 @@ python variant_calling.py -s [sample name] -x [sex] -r [reference genome] -b [BA
 ```
 ##### Step 2: Joint Genotyping
 ```bash
-python joint_genotypeing.py -i [GVCF info file] -o [output dir] -f [reference genome] -XX_f [female ref] -XY_f [male ref] -d [chrX PAR region] -m [chrY PAR region] -j [jobs]
+python joint_genotyping.py -i [GVCF info file] -o [output dir] -f [reference genome] -XX_f [female ref] -XY_f [male ref] -d [chrX PAR region] -m [chrY PAR region] -j [jobs]
 ```
 ##### Step 3: Final Variant Callset
 Apply GATK's hard-filtering parameters to refine results:
