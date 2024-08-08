@@ -33,10 +33,9 @@ gatk VariantFiltration   -R [reference genome]  -V [input.vcf]  --filter-express
 ```
 Ensure all variants have a genotype quality (GQ) no less than 20 to generate the final VCF file.
 
+### Haplotype phasing of Primate Genomes
+The pipeline applied for population-based haplotype phasing is in the `phasing` directory.
+
 ### Selective Sweep Scans
 The SF2 file uses SweepFinder2. The T2T_lassip file uses the saltiLASSI method.
 
-
-### Haplotype phasing of Primate Genomes
-
-The pipeline applied for population-based haplotype phasing is in the `phasing` directory.
