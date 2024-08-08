@@ -25,10 +25,9 @@ python joint_genotypeing.py -i [GVCF info file] -o [output dir] -f [reference ge
 ```
 ##### Step 3: Final Variant Callset
 Apply GATK's hard-filtering parameters to refine results:
-# Apply filters for SNPs
 ```bash
+# Apply filters for SNPs
 gatk VariantFiltration  -R [reference genome]  -V [input.vcf]  --filter-expression "QD < 2.0 || QUAL < 30.0 || SOR > 3.0 || FS > 60.0 || MQ < 40.0"   --filter-name "SNP_FILTER"   -O [filtered.vcf]
-
 # Apply filters for Indels
 gatk VariantFiltration   -R [reference genome]  -V [input.vcf]  --filter-expression "QD < 2.0 || QUAL < 30.0 || FS > 200.0"   --filter-name "INDEL_FILTER"  -O [filtered.vcf]
 ```
