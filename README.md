@@ -11,8 +11,6 @@ This project utilizes Telomere-to-Telomere (T2T) assembly reference genomes to p
 
 #### Alignment
 Align reads from XX and XY samples to their respective masked reference genomes.
-
-##### Code Example
 ```bash
 python align.py -r [reference genome] -i [index] -f1 [FASTQ1] -f2 [FASTQ2] -s [sample name] -o [output dir] -t [threads] -m [memory]
 ```
@@ -27,9 +25,14 @@ python joint_genotypeing.py -i [GVCF info file] -o [output dir] -f [reference ge
 ```
 ##### Step 3: Final Variant Callset
 Apply GATK's hard-filtering parameters to refine results:
-SNPs: -filter "QD < 2.0 || QUAL < 30.0 || SOR > 3.0 || FS > 60.0 || MQ < 40.0 || GQ < 20"
-Indels: -filter "QD < 2.0 || QUAL < 30.0 || FS > 200.0 || GQ < 20
+# Apply filters for SNPs
+```bash
+gatk VariantFiltration  -R [reference genome]  -V [input.vcf]  --filter-expression "QD < 2.0 || QUAL < 30.0 || SOR > 3.0 || FS > 60.0 || MQ < 40.0"   --filter-name "SNP_FILTER"   -O [filtered.vcf]
 
+# Apply filters for Indels
+gatk VariantFiltration   -R [reference genome]  -V [input.vcf]  --filter-expression "QD < 2.0 || QUAL < 30.0 || FS > 200.0"   --filter-name "INDEL_FILTER"  -O [filtered.vcf]
+```
+Ensure all variants have a genotype quality (GQ) no less than 20 to generate the final VCF file.
 
 ### Selective Sweep Scans
 The SF2 file uses SweepFinder2. The T2T_lassip file uses the saltiLASSI method.
