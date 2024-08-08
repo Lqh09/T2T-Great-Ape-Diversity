@@ -6,7 +6,7 @@ This project utilizes Telomere-to-Telomere (T2T) assembly reference genomes to p
 #### Preparation
 - **Reference Genome**: Required for mapping reads.
 - **Paired-End Reads**: From the sample to be analyzed, refer to detailed sample information in [Makova et al. (2024)](https://www.nature.com/articles/s41586-024-07473-2).
-- **PAR Regions**: Pseudoautosomal regions (PARs) are specific regions on chromosomes X and Y。
+- **PAR Regions**: Pseudoautosomal regions (PARs) are specific regions on chromosomes X and Y.
 - **Karyotype-Specific References**: For XX and XY individuals, refer to the published masking method by by [Rhie et al. (2023)](https://www.nature.com/articles/s41586-023-06457-y). 
 
 #### Alignment
